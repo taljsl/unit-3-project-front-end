@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {create} from "../services/mediaService";
 const MediaForm = (props) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -7,15 +7,25 @@ const MediaForm = (props) => {
     genre: "",
     type: "",
     details: "",
-    rating: "",
+    rating: "5.5",
     img_url: "",
   });
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
+
+  const handleCreate = async (evt) => {
+    evt.preventDefault()
+    try { 
+      const newMedia = await create(formData)
+      console.log('Created New Media:',newMedia)
+      
+    } catch (error) {console.log(error)}
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleCreate}>
         <label htmlFor="name"> Name: </label>
         <input
           type="text"
@@ -44,7 +54,12 @@ const MediaForm = (props) => {
           required
         />
         <label htmlFor="type">Media Type </label>
-        <select name="type" id="type" value={formData.type}>
+        <select
+          name="type"
+          id="type"
+          value={formData.type}
+          onChange={handleChange}
+        >
           <option value="book"> Book</option>
           <option value="movie">Movie</option>
           <option value="game">Game</option>
@@ -58,11 +73,29 @@ const MediaForm = (props) => {
           value={formData.details}
           onChange={handleChange}
           required
+          placeholder="Summary"
         />
-        <label htmlFor="rating">Rating</label>
-        <input type="text" name="rating" id="rating" value={formData.rating} onChange={handleChange} required/>
+        <label htmlFor="rating">Rating: {formData.rating}</label>
+        <input
+          type="range"
+          max={10}
+          step=".1"
+          name="rating"
+          id="rating"
+          value={formData.rating}
+          onChange={handleChange}
+          required
+          placeholder="0-10"
+        />
         <label htmlFor="img_url">Image URL:</label>
-        <input type="text" name="img_url" id="img_url" value={formData.img_url}onChange={handleChange} />
+        <input
+          type="text"
+          name="img_url"
+          id="img_url"
+          value={formData.img_url}
+          onChange={handleChange}
+        />
+        <button type="submit">Add New Media</button>
       </form>
     </div>
   );

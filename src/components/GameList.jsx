@@ -1,5 +1,5 @@
 import React from "react";
-
+import Card from "./ui/Card";
 const GameList = ({ items }) => {
  
   if(items.length === 0) {
@@ -15,7 +15,7 @@ const GameList = ({ items }) => {
       <h2>Games</h2>
       <ul>
         {items.map((game) => (
-          <li key={game._id}> {game.name}</li>
+          <Card key={game._id} item={game} />
         ))}
       </ul>
     </div>
