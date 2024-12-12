@@ -30,9 +30,6 @@ const App = () => {
     };
 
     fetchMediaItems();
-    console.log(mediaItems);
-    console.log(mediaItems.filter((item) => item.type === "movie"));
-
   }, []);
 
   switch (content) {
@@ -49,7 +46,7 @@ const App = () => {
             src="/defaults/entertainment_hub.png"
             alt="/defaults/entertainment_hub.png"
           />
-          <button onClick={() => setContent("Create a New Media")}>
+          <button className="ui secondary button" onClick={() => setContent("Create a New Media")}>
             Add new media
           </button>
 
