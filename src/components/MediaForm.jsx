@@ -8,6 +8,7 @@ const MediaForm = (props) => {
     type: "",
     details: "",
     rating: "",
+    img_url: "",
   });
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -33,7 +34,35 @@ const MediaForm = (props) => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="genre"> </label>
+        <label htmlFor="genre">Genre: </label>
+        <input
+          type="text"
+          name="genre"
+          id="genre"
+          value={formData.genre}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="type">Media Type </label>
+        <select name="type" id="type" value={formData.type}>
+          <option value="book"> Book</option>
+          <option value="movie">Movie</option>
+          <option value="game">Game</option>
+          <option value="show">Show</option>
+        </select>
+        <label htmlFor="details">Details: </label>
+        <input
+          type="text"
+          name="details"
+          id="details"
+          value={formData.details}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="rating">Rating</label>
+        <input type="text" name="rating" id="rating" value={formData.rating} onChange={handleChange} required/>
+        <label htmlFor="img_url">Image URL:</label>
+        <input type="text" name="img_url" id="img_url" value={formData.img_url}onChange={handleChange} />
       </form>
     </div>
   );
