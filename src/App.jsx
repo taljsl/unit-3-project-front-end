@@ -26,10 +26,11 @@ const App = () => {
   return (
     <div>
       <h1>Media Hub</h1>
-      <BookList items={mediaItems.filter((item) => item.type === 'book')} />
-      <MovieList items={mediaItems.filter((item) => item.type ==='movie')} />
-      <GameList items={mediaItems.filter((item) => item.type === 'game')} />
-      <ShowList items={mediaItems.filter((item) => item.type === 'show')} />
+      <button>Add</button>
+      <BookList items={mediaItems.filter((item) => item.type === "book")} />
+      <MovieList items={mediaItems.filter((item) => item.type === "movie")} />
+      <GameList items={mediaItems.filter((item) => item.type === "game")} />
+      <ShowList items={mediaItems.filter((item) => item.type === "show")} />
     </div>
   );
 };
