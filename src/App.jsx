@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import * as mediaItemsList from "./services/mediaService";
+import BookList from "./components/BookList";
+import MovieList from "./components/MovieList";
+import GameList from "./components/GameList";
+import ShowList from "./components/ShowList";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [mediaItems, setMediaItems] = useState([]);
+  const [search, setSearch] = useState("");
+
+  // here we useEffect to have things load on opening the page
+  useEffect(() => {
+    const fetchMediaItems = async () => {
+      try {
+        const items = await mediaItemsList.index();
+        setMediaItems(items);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchMediaItems();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h1>Media Hub</h1>
+      <BookList items={mediaItems.filter((item) => item.isBook)} />
+      <MovieList items={mediaItems.filter((item) => item.isMovie)} />
+      <GameList items={mediaItems.filter((item) => item.isGame)} />
+      <ShowList items={mediaItems.filter((item) => item.isShow)} />
+    </div>
+  );
+};
 
-export default App
+export default App;
