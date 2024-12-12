@@ -24,8 +24,13 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Media Hub</h1>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      {/* search box component go here */}
+
+      {/* logo goes here */}
+      <img style={{ width: '10rem' }} src="/defaults/entertainment_hub.png" alt="/defaults/entertainment_hub.png" />
+      <button>Add new media</button>
+
       <BookList items={mediaItems.filter((item) => item.type === 'book')} />
       <MovieList items={mediaItems.filter((item) => item.type ==='movie')} />
       <GameList items={mediaItems.filter((item) => item.type === 'game')} />
