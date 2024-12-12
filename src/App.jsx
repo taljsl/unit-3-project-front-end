@@ -24,6 +24,7 @@ const App = () => {
   }, []);
 
   return (
+
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       {/* search box component go here */}
 
@@ -35,6 +36,7 @@ const App = () => {
       <MovieList items={mediaItems.filter((item) => item.type ==='movie')} />
       <GameList items={mediaItems.filter((item) => item.type === 'game')} />
       <ShowList items={mediaItems.filter((item) => item.type === 'show')} />
+
     </div>
   );
 };
