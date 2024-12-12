@@ -1,6 +1,15 @@
 import React from "react";
 
 const GameList = ({ items }) => {
+ 
+  if(items.length === 0) {
+    return <>
+    {
+      <h3>No Games yet!</h3>
+    }
+    </>
+  }
+
   return (
     <div>
       <h2>Games</h2>

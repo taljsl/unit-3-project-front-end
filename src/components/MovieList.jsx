@@ -1,6 +1,16 @@
 import React from "react";
 
 const MovieList = ({ items }) => {
+
+
+  if(items.length === 0) {
+    return <>
+    {
+      <h3>No Movie yet!</h3>
+    }
+    </>
+  }
+
   return (
     <div>
       <h2>Movies</h2>

@@ -1,6 +1,15 @@
 import React from 'react'
 
 const ShowList = ({items}) => {
+
+  if(items.length === 0) {
+    return <>
+    {
+      <h3>No Tv show yet!</h3>
+    }
+    </>
+  }
+
   return (
     <div>
       <h2>TV Shows</h2>
