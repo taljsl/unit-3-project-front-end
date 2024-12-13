@@ -19,12 +19,12 @@ const Card = ({ item }) => {
       <div
         className="ui card"
         style={{
-          width: "150px",
+          width: "160px",
           backgroundColor: "var(--ui-background-color)",
           cursor: 'pointer'
         }}
       >
-        <div className="image" style={{ height: "150px" }}>
+        <div className="image" style={{ height: "200px" }}>
           {item.img_url ? (
             // design how it looks like later
             <img
