@@ -19,11 +19,11 @@ const Card = ({ item }) => {
         <div className='ui card' style={{ width: '150px', backgroundColor: 'var(--ui-background-color)' }}> 
           
           <div className="image" style={{ height: '150px' }}>
-              {item.image ? (
+              {item.img_url ? (
                 // design how it looks like later
                 <img
-                 src={item.image}
-                 alt={item.image}
+                 src={item.img_url}
+                 alt={item.ima_url}
                 />
                 ) : (
                     //if the item.image is undefined then this will show
