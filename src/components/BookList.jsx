@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Card from "./ui/Card";
-
 import ViewItemModal from "./ui/ViewItemModal";
 const BookList = ({ items }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

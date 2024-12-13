@@ -4,7 +4,7 @@ import {create} from "../services/mediaService";
 import './MediaForm.css'
 import Button from "./inputs/Button";
 
-const MediaForm = (props) => {
+const MediaForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     publicationDate: "",
