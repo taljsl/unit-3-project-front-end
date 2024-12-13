@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './ui/Card'
 
 const ShowList = ({items}) => {
 
@@ -15,7 +16,7 @@ const ShowList = ({items}) => {
       <h2>TV Shows</h2>
       <ul>
         {items.map(show => (
-            <li key={show._id}>{show.name}</li>
+            <Card key={show._id} item={show}/>
         ))}
       </ul>
     </div>

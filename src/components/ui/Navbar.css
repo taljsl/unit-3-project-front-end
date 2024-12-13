@@ -1,0 +1,17 @@
+nav {
+    background-color: var(--ui-background-color);
+    height: 10vh;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.396);
+    z-index: 100; /* for now we will fix this later*/
+}
+
+#logo {
+    width: 60px;
+}
