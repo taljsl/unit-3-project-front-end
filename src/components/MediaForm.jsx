@@ -5,7 +5,7 @@ const MediaForm = (props) => {
     name: "",
     publicationDate: "",
     genre: "",
-    type: "",
+    type: "book",
     details: "",
     rating: "5.5",
     img_url: "",
