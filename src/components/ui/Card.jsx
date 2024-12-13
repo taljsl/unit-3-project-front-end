@@ -15,11 +15,10 @@ import "./Card.css";
 
 const Card = ({ item }) => {
   return (
-    <div>
       <div
         className="ui card"
         style={{
-          width: "160px",
+          width: "150px",
           backgroundColor: "var(--ui-background-color)",
           cursor: 'pointer'
         }}
@@ -41,7 +40,6 @@ const Card = ({ item }) => {
 
         <div className="content">Rating:{item.rating}</div>
       </div>
-    </div>
   );
 };
 
