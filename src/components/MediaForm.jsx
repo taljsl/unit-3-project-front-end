@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import {create} from "../services/mediaService";
+
+import './MediaForm.css'
+import Button from "./inputs/Button";
+
 const MediaForm = (props) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,8 +28,8 @@ const MediaForm = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleCreate}>
+    <div className="form-container">
+      <form onSubmit={handleCreate} className="add-form">
         <label htmlFor="name"> Name: </label>
         <input
           type="text"

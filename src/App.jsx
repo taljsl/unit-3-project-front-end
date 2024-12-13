@@ -42,7 +42,7 @@ const App = () => {
       return <MediaForm />;
     default:
       return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", paddingBottom: '10rem' }}>
           <Navbar />
 
           <div style={{ marginTop: "16vh" }}>

@@ -9,3 +9,22 @@
     font-weight: bold;
     border-radius: 4px 4px 0px 0px;
 }
+
+/* https://stackoverflow.com/questions/19192892/css-how-can-i-set-image-size-relative-to-parent-height */
+.image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+}
+.image_from_user {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 50%;
+    min-width: 50%;
+    transform: translate(-50%, -38%);
+}

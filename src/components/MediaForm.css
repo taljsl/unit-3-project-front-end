@@ -1,0 +1,40 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 400px;
+}
+
+.add-form input[type=text]{
+    border: 1px solid var(--font-color);
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: none;
+    color: var(--font-color);
+}
+
+.add-form select {
+    padding: 0.5rem;
+    border: 1px solid var(--font-color);
+    border-radius: 0.5rem;
+}
+
+.add-form input[type=date] {
+    padding: 0.5rem;
+    border: 1px solid var(--font-color);
+    border-radius: 0.5rem;
+}
+
+.add-form button {
+    color: white;
+    background-color: green;
+    padding: 0.5rem;
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    margin-top: 2rem;
+}
