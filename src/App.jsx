@@ -10,7 +10,7 @@ import Navbar from "./components/ui/Navbar";
 
 const pages = [
   "Home Page",
-  "Create a New Media",
+  // "Create a New Media",
   "Index Page", //will contain the delete functionality and update functionality (this is our show page)
   "Abous Us",
 ];
