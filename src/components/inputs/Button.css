@@ -1,0 +1,21 @@
+/* https://codyhouse.co/nuggets/css-gradient-borders */
+.custom-button {
+    padding: 1rem;
+    background-color: var(--button-bg-color);
+    color: var(--font-color);
+    border-width: 1px;
+    border-style: solid;
+    /* border-image: linear-gradient(to right, #da052c, #f78432) 1; */
+    border-radius: 5px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    background: linear-gradient(var(--button-bg-color), var(--button-bg-color)) padding-box,
+                linear-gradient(to right, var(--font-color), var(--font-color)) border-box !important;
+}
+
+.custom-button:hover {
+    /* border-image: 1px solid linear-gradient(to right, #da052c 0%, #f78432 100%) 1; */
+    background: linear-gradient(var(--button-bg-color), var(--button-bg-color)) padding-box,
+                linear-gradient(to right, #f78432, #da052c) border-box !important;
+    
+}
