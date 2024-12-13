@@ -9,11 +9,13 @@ const BookList = ({ items }) => {
   return (
     <div>
       <h2>Books</h2>
-      <ul>
+
+      <ul style={{ display: "flex", gap: '1rem', padding: '0rem 1rem' }}>
         {items.map((book) => (
           <Card key={book._id} item={book} />
         ))}
       </ul>
+      
     </div>
   );
 };
