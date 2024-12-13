@@ -7,6 +7,7 @@ import ShowList from "./components/ShowList";
 import MediaForm from "./components/MediaForm";
 import AddMediaModal from "./components/ui/AddMediaModal";
 import Navbar from "./components/ui/Navbar";
+import Button from "./components/inputs/Button";
 
 const pages = [
   "Home Page",
@@ -50,6 +51,8 @@ const App = () => {
             {/* search box component go here */}
 
             {/* logo goes here */}
+            {/*how to center an image :)  https://www.w3schools.com/howto/howto_css_image_center.asp */}
+
             <img
               style={{ width: "20rem", display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
               src="/defaults/entertainment_hub.png"
@@ -58,13 +61,12 @@ const App = () => {
             
             <br />
 
-            <button
-             className="ui secondary button"
-             onClick={() => setIsModalOpen(true)}
-             style={{ width: '10rem', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
-            >
-              <i className="plus icon"></i> Add new media
-            </button>
+            <Button
+             text='Add new'
+             handleOnClick={() => setIsModalOpen(true)}
+             icon={<i className="plus icon"></i>}
+             styles={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+            />
 
             <BookList items={mediaItems.filter((item) => item.type === "book")} />
 

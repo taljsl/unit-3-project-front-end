@@ -17,6 +17,7 @@ const Card = ({ item }) => {
   return (
     <div>
         <div className='ui card' style={{ width: '150px', backgroundColor: 'var(--ui-background-color)' }}> 
+          
           <div className="image" style={{ height: '150px' }}>
               {item.image ? (
                 // design how it looks like later
@@ -28,14 +29,7 @@ const Card = ({ item }) => {
                     //if the item.image is undefined then this will show
                     //a book cover
                     <div
-                      style={{
-                          backgroundColor: 'red',
-                          height: '100%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'white'
-                      }}
+                      className='default-background-cover'
                     >
                       {item.name}
                     </div>
