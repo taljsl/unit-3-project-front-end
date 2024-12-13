@@ -1,4 +1,11 @@
-.ui.cards {
-    margin-top: 0em !important;
-    
+.default-background-cover {
+    background: linear-gradient(#da052c, #f78432);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 4px 4px 0px 0px;
 }

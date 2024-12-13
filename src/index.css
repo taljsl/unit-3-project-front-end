@@ -16,6 +16,10 @@
   /* ui background color */
   --dark-ui-bg: #3c3c3c;
   --light-ui-bg: #fff;
+
+  /* button background color */
+  --dark-button-bg-color: black;
+  --light-button-bg-color: white;
 }
 
 body {
@@ -50,7 +54,8 @@ body {
   :root {
       --bg: var(--dark-bg);
       --font-color: var(--dark-font-color);
-      --ui-background-color: var(--dark-ui-bg)
+      --ui-background-color: var(--dark-ui-bg);
+      --button-bg-color: var(--dark-button-bg-color);
   }
 }
 
@@ -58,7 +63,8 @@ body {
   :root {
       --bg: var(--light-bg);
       --font-color: var(--light-font-color);
-      --ui-background-color: var(--light-ui-bg)
+      --ui-background-color: var(--light-ui-bg);
+      --button-bg-color: var(--light-button-bg-color);
   }
 }
 
