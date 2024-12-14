@@ -20,7 +20,7 @@ const BookList = ({ items }) => {
     <div>
       <h2>Books</h2>
 
-      <ul style={{ display: "flex", gap: "1rem", padding: "0rem 1rem" }}>
+      <ul style={{ display: "flex", gap: "3rem", padding: "0rem 2rem" }}>
         {items.map((book) => (
           <div
             key={book._id}
