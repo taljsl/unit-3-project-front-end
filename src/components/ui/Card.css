@@ -20,12 +20,16 @@
     margin: 0;
     pointer-events: auto;
 }
+
 .image_from_user {
     display: block;
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
     min-height: 50%;
     min-width: 50%;
-    transform: translate(-50%, -38%);
+    transform: translate(-50%, -38%); */
+    width: 100%; /* Matches the container's width */
+    height: 100%; /* Matches the container's height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }

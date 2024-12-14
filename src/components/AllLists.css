@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap');
 
 
-
-@keyframes scaleDiv {
+/* @keyframes scaleDiv {
   0% {
     transform: scale(1);
   }
@@ -17,7 +17,7 @@
   to {
     transform: scale(1.2);
   }
-}
+} */
 
 
 /* and this w3school tuturial https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_fill-mode */
@@ -30,3 +30,22 @@
     transform: scale(1.15);
 }
 
+
+.ul-card-holder {
+  display: flex;
+  gap: 3rem;
+  padding: 0rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow-y: hidden;
+}
+
+.list-container {
+  margin-top: 4rem;
+
+}
+
+.media-title-header {
+  margin-left: 2rem;
+  font-family: "Alumni Sans Pinstripe";
+}

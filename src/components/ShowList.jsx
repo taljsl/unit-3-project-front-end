@@ -11,15 +11,15 @@ const ShowList = ({ items }) => {
   };
 
   if (items.length === 0) {
-    return <>{<h3>No Tv Shows yet!</h3>}</>;
+    return <>{<h3 style={{ marginLeft: '2rem' }}>No Tv Shows yet!</h3>}</>;
   }
 
   return (
-    <div>
-      <h2>TV Shows</h2>
-      <ul style={{ display: "flex", gap: "1rem", padding: "0rem 1rem" }}>
+    <div className="list-container">
+      <h2 className="media-title-header">TV Shows</h2>
+      <ul className="ul-card-holder">
         {items.map((show) => (
-          <div key={show._id} onClick={() => handleClick(show)}>
+          <div key={show._id} onClick={() => handleClick(show)} className="card-container" >
             <Card key={show._id} item={show} />
           </div>
         ))}

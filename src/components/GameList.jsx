@@ -2,6 +2,9 @@ import React from "react";
 import Card from "./ui/Card";
 import { useState } from "react";
 import ViewItemModal from "./ui/ViewItemModal";
+
+import './AllLists.css'
+
 const GameList = ({ items }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const [selectedMedia, setSelectedMedia] = useState({});
@@ -11,16 +14,16 @@ const GameList = ({ items }) => {
    };
  
   if(items.length === 0) {
-    return <>{<h3>No Games yet!</h3>}</>
+    return <>{<h3 style={{ marginLeft: '2rem' }}>No Games yet!</h3>}</>
   }
 
   return (
-    <div>
-      <h2>Games</h2>
+    <div className="list-container">
+      <h2 className="media-title-header">Games</h2>
 
-      <ul style={{ display: "flex", gap: "1rem", padding: "0rem 1rem" }}>
+      <ul className="ul-card-holder ">
         {items.map((game) => (
-          <div key={game._id} onClick={() => handleClick(game)}>
+          <div key={game._id} onClick={() => handleClick(game)} className="card-container">
           <Card key={game._id} item={game} />
           </div>
         ))}

@@ -21,3 +21,8 @@
     opacity: 0.7;
     cursor: pointer;
 }
+
+.chevron.left.icon:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

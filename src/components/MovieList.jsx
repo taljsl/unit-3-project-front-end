@@ -2,6 +2,9 @@ import React from "react";
 import Card from "./ui/Card";
 import { useState } from "react";
 import ViewItemModal from "./ui/ViewItemModal";
+
+import './AllLists.css'
+
 const MovieList = ({ items }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState({});
@@ -11,15 +14,15 @@ const MovieList = ({ items }) => {
   };
 
   if (items.length === 0) {
-    return <>{<h3>No Movies yet!</h3>}</>;
+    return <>{<h3 style={{ marginLeft: '2rem' }}>No Movies yet!</h3>}</>;
   }
 
   return (
-    <div>
-      <h2>Movies</h2>
-      <ul style={{ display: "flex", gap: "1rem", padding: "0rem 1rem" }}>
+    <div className="list-container">
+      <h2 className="media-title-header">Movies</h2>
+      <ul className="ul-card-holder">
         {items.map((movie) => (
-          <div key={movie._id} onClick={() => handleClick(movie)}>
+          <div key={movie._id} onClick={() => handleClick(movie)} className="card-container">
             <Card key={movie._id} item={movie} />
           </div>
         ))}
