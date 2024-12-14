@@ -42,7 +42,13 @@ const App = () => {
       return <MediaForm />;
     default:
       return (
-        <div style={{ display: "flex", flexDirection: "column", paddingBottom: '10rem' }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingBottom: "10rem",
+          }}
+        >
           <Navbar />
 
           <div style={{ marginTop: "16vh" }}>
@@ -94,9 +100,9 @@ const App = () => {
             <AddMediaModal
               isOpen={isModalOpen}
               onClose={setIsModalOpen}
-              children={<MediaForm />}
+              children={<MediaForm onClose={setIsModalOpen}/>}
+
             />
-            
           </div>
         </div>
       );

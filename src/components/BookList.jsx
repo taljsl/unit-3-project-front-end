@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Card from "./ui/Card";
 
-import './BookList.css'
+import "./BookList.css";
 
 import ViewItemModal from "./ui/ViewItemModal";
 const BookList = ({ items }) => {
@@ -22,7 +22,11 @@ const BookList = ({ items }) => {
 
       <ul style={{ display: "flex", gap: "3rem", padding: "0rem 2rem" }}>
         {items.map((book) => (
-          <div key={book._id} onClick={() => handleClick(book)} className="card-container">
+          <div
+            key={book._id}
+            onClick={() => handleClick(book)}
+            className="card-container"
+          >
             <Card key={book._id} item={book} />
           </div>
         ))}

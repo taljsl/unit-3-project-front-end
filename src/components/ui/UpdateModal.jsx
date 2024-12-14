@@ -1,35 +1,32 @@
 import React, { useState } from "react";
-import {create} from "../services/mediaService";
-
-import './MediaForm.css'
-import Button from "./inputs/Button";
-
-const MediaForm = ({onClose}) => {
+import { update } from "../../services/mediaService";
+const UpdateModal = ({ item, onClose }) => {
+  // the formatDate function and the change to our statevariable that calls it curtesy of chatgpt
+  const formatDate = (date) => {
+    if (!date) return ""; // Handle null/undefined dates
+    return new Date(date).toISOString().split("T")[0];
+  };
   const [formData, setFormData] = useState({
-    name: "",
-    publicationDate: "",
-    genre: "",
-    type: "book",
-    details: "",
-    rating: "5.5",
-    img_url: "",
+    ...item,
+    publicationDate: formatDate(item.publicationDate),
   });
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
-
-  const handleCreate = async (evt) => {
-    evt.preventDefault()
-    try { 
-      const newMedia = await create(formData)
-      console.log('Created New Media:',newMedia)
-      onClose(false)
-    } catch (error) {console.log(error)}
+  const handleUpdate = async (evt) => {
+    // evt.preventDefault();
+    try {
+      const updatedItem = await update(formData);
+      console.log("Updated Item:", updatedItem);
+      onClose()
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="form-container">
-      <form onSubmit={handleCreate} className="add-form">
+      <form onSubmit={handleUpdate}>
         <label htmlFor="name"> Name: </label>
         <input
           type="text"
@@ -99,10 +96,10 @@ const MediaForm = ({onClose}) => {
           value={formData.img_url}
           onChange={handleChange}
         />
-        <button type="submit">Add New Media</button>
+        <button type="submit">Update</button>
       </form>
     </div>
   );
 };
 
-export default MediaForm;
+export default UpdateModal;

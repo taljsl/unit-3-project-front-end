@@ -1,4 +1,25 @@
-/* sufian helps me with this */
+
+
+
+@keyframes scaleDiv {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes endgame {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+
 /* and this w3school tuturial https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_fill-mode */
 .card-container {
     animation-fill-mode: forwards; /* Ensures the animation retains its final state */
@@ -8,3 +29,4 @@
 .card-container:hover {
     transform: scale(1.15);
 }
+
