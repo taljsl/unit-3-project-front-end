@@ -1,21 +1,10 @@
 /* sufian helps me with this */
-
-
+/* and this w3school tuturial https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_fill-mode */
 .card-container {
-    animation-fill-mode: forwards;
-}
-
-@keyframes scaleDiv {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.2); }
-}
-
-@keyframes endgame {
-    from { transform: scale(1); }
-    to { transform: scale(1.2); }
+    animation-fill-mode: forwards; /* Ensures the animation retains its final state */
+    transform: scale(1);
+    transition: transform 0.3s ease-in;
 }
 .card-container:hover {
-    animation-name: endgame;
-    animation: scaleDiv 0.4s;
-    animation-timing-function: ease-in;
+    transform: scale(1.15);
 }
