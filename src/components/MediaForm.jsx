@@ -4,7 +4,7 @@ import {create} from "../services/mediaService";
 import './MediaForm.css'
 import Button from "./inputs/Button";
 
-const MediaForm = () => {
+const MediaForm = ({onClose}) => {
   const [formData, setFormData] = useState({
     name: "",
     publicationDate: "",
@@ -23,7 +23,7 @@ const MediaForm = () => {
     try { 
       const newMedia = await create(formData)
       console.log('Created New Media:',newMedia)
-      
+      onClose(false)
     } catch (error) {console.log(error)}
   };
 
