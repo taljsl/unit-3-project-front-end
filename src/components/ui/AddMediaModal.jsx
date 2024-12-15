@@ -7,6 +7,7 @@ const AddMediaModal = ({ isOpen=false, onClose, children }) => {
   return (
     <div
      className='modal'
+     
      style={{ display: isOpen ? 'block' : 'none' }}
     >
         <div className='modal_content'>
