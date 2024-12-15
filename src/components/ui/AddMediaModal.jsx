@@ -1,18 +1,24 @@
-import React, { useEffect } from "react";
+import React from 'react'
 
-import "./AddMediaModal.css";
+import './AddMediaModal.css'
 
-const AddMediaModal = ({ isOpen = false, onClose, children }) => {
+const AddMediaModal = ({ isOpen=false, onClose, children }) => {
+  
   return (
-    <div className="modal" style={{ display: isOpen ? "block" : "none" }}>
-      <div className="modal_content">
-        <i className="close icon" onClick={() => onClose()}></i>
+    <div
+     className='modal'
+     style={{ display: isOpen ? 'block' : 'none' }}
+    >
+        <div className='modal_content'>
+            <i className="close icon" onClick={() => onClose() }></i>
 
-        <h3>Add new Media</h3>
-        <div>{children}</div>
-      </div>
+            <h3>Add new Media</h3>
+            <div>
+                {children}
+            </div>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddMediaModal;
+export default AddMediaModal

@@ -14,6 +14,24 @@ import "./Card.css";
 // }
 
 const Card = ({ item }) => {
+
+
+  const renderType = () => {
+    
+    // const publicantionYear = new Date(item.publicationDate).getFullYear()
+
+    switch (item.type) {
+      case 'book':
+        return <i className="book icon"></i>
+      case 'movie':
+        return <span><i className="film icon"></i> {item.rating * 10}%</span>
+      case 'game':
+        return <i className="game icon"></i>
+    
+      default:
+        return <span><i className="tv icon"></i> {item.rating * 10}%</span>
+    }
+  } 
   return (
       <div
         className="ui card"
@@ -38,7 +56,16 @@ const Card = ({ item }) => {
           )}
         </div>
 
-        <div className="content">Rating:{item.rating}</div>
+        <div className={`content ${item.type}`}>
+          <div>
+            <i className="star icon" style={{ color: 'yellow' }}></i>{item.rating}
+          </div>
+          
+          <div>
+            {/* <i className="calendar icon" style={{ color: '#e53f21' }}></i> */}
+            {renderType()}
+          </div>
+        </div>
       </div>
   );
 };
