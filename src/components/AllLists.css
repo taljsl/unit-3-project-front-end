@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap');
+
+
+/* @keyframes scaleDiv {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes endgame {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+} */
+
+
+/* and this w3school tuturial https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_fill-mode */
+.card-container {
+    animation-fill-mode: forwards; /* Ensures the animation retains its final state */
+    transform: scale(1);
+    transition: transform 0.3s ease-in;
+}
+.card-container:hover {
+    transform: scale(1.15);
+}
+
+
+.ul-card-holder {
+  display: flex;
+  gap: 3rem;
+  padding: 0rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow-y: hidden;
+
+}
+
+/* https://stackoverflow.com/questions/26493446/change-size-of-scrollbar-thumb-with-css */
+
+.ul-card-holder::-webkit-scrollbar {
+	width: 1px;
+}
+.ul-card-holder::-webkit-scrollbar-track {
+	background-color: rgba(255, 255, 255, 0);
+	-webkit-border-radius: 1px;
+}
+.ul-card-holder::-webkit-scrollbar-thumb:horizontal {
+	background-color: linear-gradient(#f78432, #da052c);
+	-webkit-border-radius: 0px;
+  border-radius: 100vw;
+    -webkit-width:5;
+}
+.ul-card-holder::-webkit-scrollbar-thumb:horizontal:hover {
+	background: linear-gradient(#f78432b6, #da052cbe);
+}
+
+
+
+.list-container {
+  margin-top: 4rem;
+
+}
+
+.media-title-header {
+  margin-left: 2rem;
+  font-family: "Alumni Sans Pinstripe";
+}

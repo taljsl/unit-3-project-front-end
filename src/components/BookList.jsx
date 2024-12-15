@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "./ui/Card";
 
-import "./BookList.css";
+import "./AllLists.css";
 
 import ViewItemModal from "./ui/ViewItemModal";
 const BookList = ({ items }) => {
@@ -13,14 +13,14 @@ const BookList = ({ items }) => {
   };
 
   if (items.length === 0) {
-    return <>{<h3>No Books yet!</h3>}</>;
+    return <>{<h3 style={{ marginLeft: '2rem' }}>No Books yet!</h3>}</>;
   }
 
   return (
-    <div>
-      <h2>Books</h2>
+    <div className="list-container">
+      <h2 className="media-title-header">Books</h2>
 
-      <ul style={{ display: "flex", gap: "3rem", padding: "0rem 2rem" }}>
+      <ul className="ul-card-holder">
         {items.map((book) => (
           <div
             key={book._id}

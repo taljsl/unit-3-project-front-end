@@ -12,7 +12,9 @@ const ViewItemModal = ({ isOpen = false, onClose, item }) => {
   
   //
 if (isEditModalOpen){
-  return <UpdateModal  item={item} onClose={() => setIsEditModalOpen(false)}/>
+  return <div className="modal" style={{ display: isEditModalOpen ? "block" : "none" }}>
+    <UpdateModal  item={item} onClose={() => setIsEditModalOpen(false)}/>
+  </div>
 }
 
 const handleDelete = async (item) => {
@@ -48,19 +50,24 @@ const handleDelete = async (item) => {
         <p>Genre: {item.genre}</p>
         <p>Details: {item.details}</p>
         <p>Rating: {item.rating}</p>
-        <Button
-          text="Update"
-          icon={<i className="pencil icon"></i>}
-          handleOnClick={() => setIsEditModalOpen(true)}
-          
-        />
+        
 
-        <Button
-          text="Delete"
-          icon={<i className="trash icon"></i>}
-          styles={{ backgroundColor: "red" }}
-          handleOnClick={() => handleDelete(item)}
-        />
+        <div style={{ display: 'flex', gap: '2rem' }}>
+          <Button
+            text="Update"
+            icon={<i className="pencil icon"></i>}
+            handleOnClick={() => setIsEditModalOpen(true)}
+            
+          />
+
+          <Button
+            text="Delete"
+            icon={<i className="trash icon"></i>}
+            styles={{ backgroundColor: "red" }}
+            handleOnClick={() => handleDelete(item)}
+          />
+        </div>
+
       </div>
     </div>
   );
