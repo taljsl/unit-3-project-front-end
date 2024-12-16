@@ -35,7 +35,8 @@ const App = () => {
     };
 
     fetchMediaItems();
-  }, []);
+    // Placinig mediaItems in the array allwos page to update when CRUD functionality is called
+  }, [mediaItems]);
 
   switch (content) {
     case "Create a New Media":
