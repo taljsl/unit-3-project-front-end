@@ -1,5 +1,12 @@
 .ui.card {
     box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.478) !important;
+
+    /* https://www.geeksforgeeks.org/how-to-disable-text-selection-highlighting-using-css/ */
+    user-select: none;
+    -webkit-user-select: none;  /* Chrome, Opera */
+    -webkit-touch-callout: none;   /* Safari */
+    -moz-user-select: none;   /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 

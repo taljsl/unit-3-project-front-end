@@ -19,7 +19,6 @@
   }
 } */
 
-
 /* and this w3school tuturial https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_fill-mode */
 .card-container {
     animation-fill-mode: forwards; /* Ensures the animation retains its final state */
@@ -38,6 +37,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   overflow-y: hidden;
+  cursor: grab;
 
 }
 
@@ -70,4 +70,9 @@
 .media-title-header {
   margin-left: 2rem;
   font-family: "Alumni Sans Pinstripe";
+}
+
+
+.ui.placeholder+.ui.placeholder {
+  margin-top: 0rem !important;
 }
