@@ -17,7 +17,7 @@ const UpdateModal = ({ item, onClose }) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
   const handleUpdate = async (evt) => {
-    // evt.preventDefault();
+    evt.preventDefault();
     try {
       const updatedItem = await update(formData);
       console.log("Updated Item:", updatedItem);

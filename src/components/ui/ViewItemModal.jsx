@@ -4,41 +4,41 @@ import Button from "../inputs/Button";
 import { useState } from "react";
 import UpdateModal from "./UpdateModal";
 import { deleteItem } from "../../services/mediaService";
+
 const ViewItemModal = ({ isOpen = false, onClose, item }) => {
-  console.log(isOpen);
+  // console.log(isOpen);
   // make a modal open a modal
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  
-  
+
   //
-if (isEditModalOpen){
-  return <div className="modal" style={{ display: isEditModalOpen ? "block" : "none" }}>
-    <UpdateModal  item={item} onClose={() => setIsEditModalOpen(false)}/>
-  </div>
-}
+  if (isEditModalOpen) {
+    return (
+      <div
+        className="modal"
+        style={{ display: isEditModalOpen ? "block" : "none" }}
+      >
+        <UpdateModal
+          item={item}
+          onClose={() => {
+            // Here we do a nested on close so that both view and update close
 
-const handleDelete = async (item) => {
-  try {
-    const deletedItem = await deleteItem(item)
-    onClose()
-  } catch (err) {
-    console.log("Error deleteing item:", err)
+            setIsEditModalOpen(false);
+            onClose();
+          }}
+        />
+      </div>
+    );
   }
-}
 
-
-// const handleUpdate = async (evt) => {
-//   // evt.preventDefault();
-//   try {
-//     const updatedItem = await update(formData);
-//     console.log("Updated Item:", updatedItem);
-//     onClose()
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-
+  const handleDelete = async (item) => {
+    try {
+      const deletedItem = await deleteItem(item);
+      console.log(deletedItem);
+      onClose();
+    } catch (err) {
+      console.log("Error deleteing item:", err);
+    }
+  };
 
   return (
     <div className="modal" style={{ display: isOpen ? "block" : "none" }}>
@@ -50,14 +50,12 @@ const handleDelete = async (item) => {
         <p>Genre: {item.genre}</p>
         <p>Details: {item.details}</p>
         <p>Rating: {item.rating}</p>
-        
 
-        <div style={{ display: 'flex', gap: '2rem' }}>
+        <div style={{ display: "flex", gap: "2rem" }}>
           <Button
             text="Update"
             icon={<i className="pencil icon"></i>}
             handleOnClick={() => setIsEditModalOpen(true)}
-            
           />
 
           <Button
@@ -67,11 +65,9 @@ const handleDelete = async (item) => {
             handleOnClick={() => handleDelete(item)}
           />
         </div>
-
       </div>
     </div>
   );
 };
 
 export default ViewItemModal;
-

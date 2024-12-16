@@ -7,7 +7,7 @@ import "./AllLists.css";
 
 import ViewItemModal from "./ui/ViewItemModal";
 import ListPlaceholder from "./placeholders/ListPlaceholder";
-const BookList = ({ items }) => {
+const BookList = ({ items, search }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState({});
 
@@ -18,15 +18,16 @@ const BookList = ({ items }) => {
     setSelectedMedia(item);
   };
 
-  if (items.length === 0) {
+  if (items.length === 0 && search.length === 0) {
     return (
       <ListPlaceholder header='Loading Books...'/>
     )
   }
 
   return (
+    
     <div className="list-container">
-      <h2 className="media-title-header">Books</h2>
+      <h2 className="media-title-header"style={{display:items.length>=1 && search.length>=0 ? 'block': 'none'}}>Books</h2>
 
       <ul
        className="ul-card-holder"
