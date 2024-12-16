@@ -28,10 +28,10 @@ const App = () => {
     const fetchMediaItems = async () => {
       try {
         const items = await index();
-        
+
         setTimeout(() => {
           setMediaItems(items);
-        },1000)
+        }, 1000);
       } catch (error) {
         console.log(error);
       }
@@ -73,7 +73,20 @@ const App = () => {
             />
 
             <br />
-
+            <div
+              style={{
+                display: "flex",
+                placeContent: "center",
+                marginBottom: "15px",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Search by Name"
+                value={search}
+                onChange={(evt) => setSearch(evt.target.value)}
+              />
+            </div>
             <Button
               text="Add new"
               handleOnClick={() => setIsModalOpen(true)}
@@ -86,26 +99,46 @@ const App = () => {
             />
 
             <BookList
-              items={mediaItems.filter((item) => item.type === "book")}
+              items={mediaItems
+                .filter((item) => item.type === "book")
+                // Here we filter our filter  to account for when a search has occured
+                .filter((item) =>
+                  item.name.toLowerCase().includes(search.toLowerCase())
+                )}
+              search={search}
             />
 
             <MovieList
-              items={mediaItems.filter((item) => item.type === "movie")}
+              items={mediaItems
+                .filter((item) => item.type === "movie")
+                .filter((item) =>
+                  item.name.toLowerCase().includes(search.toLowerCase())
+                )}
+              search={search}
             />
 
             <GameList
-              items={mediaItems.filter((item) => item.type === "game")}
+              items={mediaItems
+                .filter((item) => item.type === "game")
+                .filter((item) =>
+                  item.name.toLowerCase().includes(search.toLowerCase())
+                )}
+              search={search}
             />
 
             <ShowList
-              items={mediaItems.filter((item) => item.type === "show")}
+              items={mediaItems
+                .filter((item) => item.type === "show")
+                .filter((item) =>
+                  item.name.toLowerCase().includes(search.toLowerCase())
+                )}
+              search={search}
             />
 
             <AddMediaModal
               isOpen={isModalOpen}
               onClose={setIsModalOpen}
-              children={<MediaForm onClose={setIsModalOpen}/>}
-
+              children={<MediaForm onClose={setIsModalOpen} />}
             />
           </div>
         </div>
