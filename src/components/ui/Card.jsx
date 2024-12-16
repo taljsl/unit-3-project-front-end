@@ -31,7 +31,7 @@ const Card = ({ item }) => {
       default:
         return <span><i className="tv icon"></i> {item.rating * 10}%</span>
     }
-    
+
   } 
   return (
       <div

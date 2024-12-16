@@ -28,7 +28,10 @@ const App = () => {
     const fetchMediaItems = async () => {
       try {
         const items = await index();
-        setMediaItems(items);
+        
+        setTimeout(() => {
+          setMediaItems(items);
+        },1000)
       } catch (error) {
         console.log(error);
       }
