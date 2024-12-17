@@ -56,11 +56,7 @@ const App = () => {
           <Navbar />
 
           <div style={{ marginTop: "16vh" }}>
-            {/* search box component go here */}
-
-            {/* logo goes here */}
-            {/*how to center an image :)  https://www.w3schools.com/howto/howto_css_image_center.asp */}
-
+         
             <img
               style={{
                 width: "20rem",
@@ -88,7 +84,7 @@ const App = () => {
               />
             </div>
             <Button
-              text="Add new"
+              text="Add New Media"
               handleOnClick={() => setIsModalOpen(true)}
               icon={<i className="plus icon"></i>}
               styles={{
